@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Http\Controllers\Customer;
+
+use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use App\Models\Loan;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+
+class LoansController extends Controller
+{
+    public function loans(Customer $customer, Request $request){
+
+        $loans = Loan::with('user')->where('customer_id', $customer->customer_id);
+        if($request->status){
+            $loans = $loans->where('type',$request->status);
+        }
+
+        if($request->date){
+            $start = Carbon::parse($request->date)->startOfDay();
+            $end = Carbon::parse($request->date)->endOfDay();
+            $loans = $loans->whereBetween('created_at',[$start, $end]);
+        }
+
+        $loans = $loans->orderBy('id','DESC')->get();
+        $loanData = collect();
+
+        foreach ($loans as $loan) {
+            $tempCollection = (object) [
+                'id' => $loan->id,
+                'name' => $loan->user->firstname . ' ' . $loan->user->lastname,
+                'loan_type' => $loan->loan_purpose,
+                'status' => $loan->status,
+                'duration' => $loan->duration." Months",
+                'expiration_date' => $loan->loan_end_date ? Carbon::parse($loan->loan_end_date)->format('d F Y') : 'Loan Pending',
+            ];
+
+            $loanData = $loanData->concat([$tempCollection]);
+        }
+
+        return Inertia::render('Customer/Catalog',[
+            'customer' => $customer,
+            'loans' => $loanData
+        ]);
+    }
+}
