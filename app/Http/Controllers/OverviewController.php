@@ -12,8 +12,6 @@ use Inertia\Inertia;
 class OverviewController extends Controller
 {
     public function index(){
-        Transaction::find(45)->delete();
-        dd($this->transactions());
         return Inertia::render('Overview/Index',[
             'transaction_options' => $this->renderTransactionsChart()->options,
             'transaction_series' => $this->renderTransactionsChart()->series,
