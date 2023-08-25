@@ -28,7 +28,7 @@ class TransactionController extends Controller
         foreach ($transactions as $transaction) {
             $tempCollection = (Object)[
                 'id' => $transaction->id,
-                'name' => $transaction->user->firstname . ' ' . $transaction->user->lastname,
+                'name' => $transaction->user?->firstname . ' ' . $transaction->user?->lastname,
                 'type' => ucwords($transaction->type),
                 'date' => Carbon::parse($transaction->created_at)->format('d F Y'),
             ];
@@ -44,7 +44,7 @@ class TransactionController extends Controller
         $transactionData = collect(
             (object) [
                 'id' => $transaction->id,
-                'name' => $transaction->user->firstname . ' ' . $transaction->user->lastname,
+                'name' => $transaction->user?->firstname . ' ' . $transaction->user?->lastname,
                 'type' => ucwords($transaction->type),
                 'date' => Carbon::parse($transaction->created_at)->format('d F Y'),
                 'time' => Carbon::parse($transaction->created_at)->format('h:ia'),

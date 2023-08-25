@@ -32,7 +32,7 @@ class LoansController extends Controller
         foreach ($loans as $loan) {
             $tempCollection = (object) [
                 'id' => $loan->id,
-                'name' => $loan->user->firstname . ' ' . $loan->user->lastname,
+                'name' => $loan->user?->firstname . ' ' . $loan->user?->lastname,
                 'loan_type' => $loan->loan_purpose,
                 'status' => $loan->status,
                 'duration' => $loan->duration." Months",
@@ -48,7 +48,7 @@ class LoansController extends Controller
     }
 
     public function show(Loan $loan){
-        $user = $loan->user;
+        $user = $loan->user?;
 
         $options = [
             'join' => ', ',
