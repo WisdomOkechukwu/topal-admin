@@ -50,7 +50,7 @@ class ProfileController extends Controller
             'password' => ['required','confirmed',Password::min(8)->mixedCase()->numbers()],
         ]);
 
-        $customer->password = Hash::make($request->password);
+        $customer->password = md5($request->password);
         $customer->save();
 
         return back()->with('success','User Password Updated Successfully');
