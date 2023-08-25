@@ -59,7 +59,7 @@
         if(!status.value){
             return name_sort;
         }
-        return name_sort.filter((stat) => stat.status === status.value);
+        return name_sort.filter((stat) => stat.status == status.value);
     })
 
     const SendDate = () => {

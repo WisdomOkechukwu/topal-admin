@@ -155,10 +155,10 @@
                                     <!-- {{-- </div> --}} -->
                                 </div>
                                 <div class="d-flex align-items-center text-sm font-weight-bold">
-                                    <h6 v-if="loan.status === 0" class="mb-0 text-sm text-warning">Pending</h6>
-                                    <h6 v-else-if="loan.status === 1" class="mb-0 text-sm text-success">Active</h6>
-                                    <h6 v-else-if="loan.status === 2" class="mb-0 text-sm text-danger">Rejected</h6>
-                                    <h6 v-else-if="loan.status === 3" class="mb-0 text-sm text-success">Completed</h6>
+                                    <h6 v-if="loan.status == 0" class="mb-0 text-sm text-warning">Pending</h6>
+                                    <h6 v-else-if="loan.status == 1" class="mb-0 text-sm text-success">Active</h6>
+                                    <h6 v-else-if="loan.status == 2" class="mb-0 text-sm text-danger">Rejected</h6>
+                                    <h6 v-else-if="loan.status == 3" class="mb-0 text-sm text-success">Completed</h6>
                                     <h6 v-else class="mb-0 text-sm text-danger">Cancelled</h6>
                                 </div>
                             </li>

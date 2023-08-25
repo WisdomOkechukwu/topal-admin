@@ -60,7 +60,7 @@
         if(!status.value){
             return name_sort;
         }
-        return name_sort.filter((stat) => stat.type.toLowerCase() === status.value.toLowerCase());
+        return name_sort.filter((stat) => stat.type.toLowerCase() == status.value.toLowerCase());
     })
 
     const SendDate = () => {

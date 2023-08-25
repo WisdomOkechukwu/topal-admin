@@ -32,11 +32,11 @@
                     <h6 class="mb-0 text-sm">{{ saving.interest }}%</h6>
                 </td>
                 <td>
-                    <div v-if="saving.status === '0'">
+                    <div v-if="saving.status == '0'">
                         <h6 class="mb-0 text-sm text-success">Active</h6>
                     </div>
 
-                    <div v-if="saving.status === '1'">
+                    <div v-if="saving.status == '1'">
                         <h6 class="mb-0 text-sm text-warning">completed</h6>
                     </div>
                 </td>

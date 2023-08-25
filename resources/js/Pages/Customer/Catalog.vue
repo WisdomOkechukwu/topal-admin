@@ -120,7 +120,7 @@ import { computed, ref } from 'vue';
     const date = ref('');
     const tableData = computed(()=> {
         if(status.value && props.savings){
-            return props.savings.filter((saving) => saving.status.toLowerCase() === status.value.toLowerCase());
+            return props.savings.filter((saving) => saving.status.toLowerCase() == status.value.toLowerCase());
         }
 
         if(status.value && props.loans){
@@ -128,7 +128,7 @@ import { computed, ref } from 'vue';
         }
 
         if(status.value && props.transactions){
-            return props.transactions.filter((transaction) => transaction.type.toLowerCase() === status.value.toLowerCase());
+            return props.transactions.filter((transaction) => transaction.type.toLowerCase() == status.value.toLowerCase());
         }
     })
 
