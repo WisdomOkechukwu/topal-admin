@@ -37,7 +37,7 @@ class SavingsController extends Controller
         foreach ($savings as $saving) {
             $tempCollection = (object) [
                 'id' => $saving->id,
-                'name' => $saving->user->firstname . ' ' . $saving->user->lastname,
+                'name' => $saving->user?->firstname . ' ' . $saving->user?->lastname,
                 'interest' => round(($saving->interest_due / $saving->amount_to_save) * 100, 2),
                 'status' => $saving->status,
                 'duration' => Carbon::parse($saving->start_date)->diffInMonths(Carbon::parse($saving->maturity_date)),
@@ -53,7 +53,7 @@ class SavingsController extends Controller
 
     public function show(Saving $saving)
     {
-        $user = $saving->user;
+        $user = $saving->user?;
 
         $options = [
             'join' => ', ',
