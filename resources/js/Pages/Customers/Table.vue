@@ -25,7 +25,7 @@
                     </div>
                 </td>
                 <td>
-                    <h6 v-if="customer.status === 0" class="mb-0 text-sm text-success">Active</h6>
+                    <h6 v-if="customer.status == 0" class="mb-0 text-sm text-success">Active</h6>
                     <h6 v-else class="mb-0 text-sm text-danger">suspended</h6>
                 </td>
 
