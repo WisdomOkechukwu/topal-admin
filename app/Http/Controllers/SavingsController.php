@@ -53,7 +53,7 @@ class SavingsController extends Controller
 
     public function show(Saving $saving)
     {
-        $user = $saving->user?;
+        $user = $saving->user;
 
         $options = [
             'join' => ', ',
