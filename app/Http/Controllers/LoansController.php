@@ -36,7 +36,7 @@ class LoansController extends Controller
                 'loan_type' => $loan->loan_purpose,
                 'status' => $loan->status,
                 'duration' => $loan->duration." Months",
-                'expiration_date' => $loan->loan_end_date ? Carbon::parse($loan->loan_end_date)->format('d F Y') : 'Loan Pending',
+                'expiration_date' => $loan->status == 0 ? 'No Expiration Date': Carbon::parse($loan->loan_end_date)->format('d F Y') ,
             ];
 
             $loanData = $loanData->concat([$tempCollection]);
