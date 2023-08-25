@@ -48,7 +48,7 @@ class LoansController extends Controller
     }
 
     public function show(Loan $loan){
-        $user = $loan->user?;
+        $user = $loan->user;
 
         $options = [
             'join' => ', ',
