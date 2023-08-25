@@ -51,7 +51,6 @@ class ProfileController extends Controller
         ]);
 
         $customer->password = Hash::make($request->password);
-        // $customer->pin = $request->password;
         $customer->save();
 
         return back()->with('success','User Password Updated Successfully');

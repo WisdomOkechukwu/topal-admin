@@ -8,7 +8,7 @@
                         <div class="col-4">
                             <div class="nav-wrapper position-relative end-0">
                                 <ul class="nav nav-pills nav-fill p-1" role="tablist">
-                                    <li class="nav-item" :class="type == 'area' ? 'btn btn-xs btn-primary' : ''">
+                                    <li class="nav-item" :class="type == 'area' ? 'btn btn-xs btn-primary text-white' : ''">
                                         <a class="nav-link mb-0 px-0 py-1 active " @click.prevent="type = 'area'">
                                             <svg xmlns="http://www.w3.org/2000/svg" height="1em"
                                                 viewBox="0 0 512 512">
@@ -17,7 +17,7 @@
                                             </svg>
                                         </a>
                                     </li>
-                                    <li class="nav-item" :class="type == 'bar' ? 'btn btn-xs btn-primary' : ''">
+                                    <li class="nav-item" :class="type == 'bar' ? 'btn btn-xs btn-primary text-white' : ''">
                                         <a class="nav-link mb-0 px-0 py-1" @click.prevent="type = 'bar'">
                                             <svg xmlns="http://www.w3.org/2000/svg" height="1em"
                                                 viewBox="0 0 448 512">
