@@ -10,6 +10,6 @@ Route::get('/', function () {
 });
 
 Route::GET('/login', [LoginController::class,'show'])->name('login');
-Route::POST('/login', [LoginController::class,'handle'])->name('login');
+Route::POST('/login', [LoginController::class,'handle'])->name('login-submit');
 
 Route::GET('/home', [HomeController::class,'home'])->name('home');

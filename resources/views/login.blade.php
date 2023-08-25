@@ -41,7 +41,7 @@
                             <img src="{{ asset('assets/logo.svg') }}" class="navbar-brand-img h-50 w-30" alt="main_logo">
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('login') }}" method="POST" role="form" class="text-start">
+                            <form action="{{ route('login-submit') }}" method="POST" role="form" class="text-start">
                                 @csrf
                                 @if (session()->has('error'))
                                     <div class="alert alert-danger text-white text-center" role="alert">
