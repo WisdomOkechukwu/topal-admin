@@ -89,7 +89,7 @@ class LoansController extends Controller
             return back()->with('error','Loan not found');
         }
 
-        if($loan->status !== 0){
+        if($loan->status != 0){
             return back()->with('error','Loan is not pending for approval');
         }
 
@@ -134,7 +134,7 @@ class LoansController extends Controller
             return back()->with('error','Loan not found');
         }
 
-        if($loan->status !== 0){
+        if($loan->status != 0){
             return back()->with('error','Loan is not pending for approval');
         }
 
