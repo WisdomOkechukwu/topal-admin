@@ -37,7 +37,7 @@
                     </div>
 
                     <div v-if="saving.status == '1'">
-                        <h6 class="mb-0 text-sm text-warning">completed</h6>
+                        <h6 class="mb-0 text-sm text-warning">Completed</h6>
                     </div>
                 </td>
                 <td>
