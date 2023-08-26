@@ -84,7 +84,7 @@ import { ref, watch } from "vue";
     watch(date, async() => {
         if(date.value){
             const dateFormat = `${date.value.year}-${date.value.month + 1}-1`;
-            let data = await fetch(`${url}/chart/loans-chart/${dateFormat}/${status.value}`);
+            let data = await fetch(`${props.url}/chart/loans-chart/${dateFormat}/${status.value}`);
             const chartData = await data.json();
 
             updatedOptions.value = chartData.options
@@ -94,7 +94,7 @@ import { ref, watch } from "vue";
 
     watch(status, async() => {
             const dateFormat = `${date.value.year}-${date.value.month + 1}-1`;
-            let data = await fetch(`${url}/chart/loans-chart/${dateFormat}/${status.value}`);
+            let data = await fetch(`${props.url}/chart/loans-chart/${dateFormat}/${status.value}`);
             const chartData = await data.json();
 
             updatedOptions.value = chartData.options
