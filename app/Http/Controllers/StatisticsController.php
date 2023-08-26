@@ -17,13 +17,14 @@ class StatisticsController extends Controller
             }
         }
         $chartData = new OverviewController();
-
+        $url = (env('APP_ENV') == 'local' ? 'http://localhost:8000' : 'https://admin.tapolgroup.com');
         return Inertia::render('Statistics/Index',[
             'transaction_options' => $chartData->renderTransactionsChart()->options,
             'transaction_series' => $chartData->renderTransactionsChart()->series,
             'loan_options' => $chartData->renderLoansChart()->options,
             'loan_series' => $chartData->renderLoansChart()->series,
-            'transaction_dropdown' => $transaction
+            'transaction_dropdown' => $transaction,
+            'url' => $url
         ]);
     }
 }

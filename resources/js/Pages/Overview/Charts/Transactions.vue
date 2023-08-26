@@ -68,7 +68,8 @@ import { ref, watch } from "vue";
     const props = defineProps({
         'options': Object,
         'series': Array,
-        'transaction_dropdown': Object
+        'transaction_dropdown': Object,
+        'url': String,
     })
 
     const type = ref('area');
@@ -84,7 +85,7 @@ import { ref, watch } from "vue";
     watch(date, async() => {
         if(date.value){
             const dateFormat = `${date.value.year}-${date.value.month + 1}-1`;
-            let data = await fetch(`http://localhost:8000/chart/transactions-chart/${dateFormat}/${status.value}`);
+            let data = await fetch(`${url}/chart/transactions-chart/${dateFormat}/${status.value}`);
             const chartData = await data.json();
 
             updatedOptions.value = chartData.options
@@ -94,7 +95,7 @@ import { ref, watch } from "vue";
 
     watch(status, async() => {
             const dateFormat = `${date.value.year}-${date.value.month + 1}-1`;
-            let data = await fetch(`http://localhost:8000/chart/transactions-chart/${dateFormat}/${status.value}`);
+            let data = await fetch(`${url}/chart/transactions-chart/${dateFormat}/${status.value}`);
             const chartData = await data.json();
 
             updatedOptions.value = chartData.options

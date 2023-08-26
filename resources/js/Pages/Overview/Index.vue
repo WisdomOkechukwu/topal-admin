@@ -1,9 +1,9 @@
 <template>
     <div class="row mt-4">
     <!-- <Chart :options="options" :series="series" /> -->
-    <Transactions :options="transaction_options" :series="transaction_series" :transaction_dropdown="transaction_dropdown"/>
-    <Loans :options="loan_options" :series="loan_series"/>
-    <Savings :options="saving_options" :series="saving_series"/>
+    <Transactions :options="transaction_options" :series="transaction_series" :transaction_dropdown="transaction_dropdown" :url="url"/>
+    <Loans :options="loan_options" :series="loan_series" :url="url"/>
+    <Savings :options="saving_options" :series="saving_series" :url="url"/>
     </div>
     <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">
@@ -35,7 +35,8 @@
         'saving_options': Object,
         'saving_series': Array,
         'transactions': Object,
-        'transaction_dropdown': Object
+        'transaction_dropdown': Object,
+        'url': String,
     })
 </script>
 

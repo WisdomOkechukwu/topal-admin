@@ -1,11 +1,11 @@
 <template>
     <div class="row mt-2">
-        <Transactions :options="transaction_options" :series="transaction_series" :transaction_dropdown="transaction_dropdown"/>
+        <Transactions :options="transaction_options" :series="transaction_series" :transaction_dropdown="transaction_dropdown" :url="url"/>
 
     </div>
 
     <div class="row mt-2">
-        <Loans :options="loan_options" :series="loan_series"/>
+        <Loans :options="loan_options" :series="loan_series" :url="url"/>
     </div>
 </template>
 
@@ -23,6 +23,7 @@
         'loan_options': Object,
         'loan_series': Array,
         'transaction_dropdown':Object,
+        'url': String,
     })
 
     var type = ref('area');

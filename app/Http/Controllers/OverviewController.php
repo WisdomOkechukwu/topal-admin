@@ -20,6 +20,7 @@ class OverviewController extends Controller
             }
         }
 
+        $url = (env('APP_ENV') == 'local' ? 'http://localhost:8000' : 'https://admin.tapolgroup.com');
         return Inertia::render('Overview/Index',[
             'transaction_options' => $this->renderTransactionsChart()->options,
             'transaction_series' => $this->renderTransactionsChart()->series,
@@ -28,7 +29,8 @@ class OverviewController extends Controller
             'saving_options' => $this->renderSavingsChart()->options,
             'saving_series' => $this->renderSavingsChart()->series,
             'transactions' => $this->transactions(),
-            'transaction_dropdown' => $transaction
+            'transaction_dropdown' => $transaction,
+            'url' => $url
         ]);
     }
 
