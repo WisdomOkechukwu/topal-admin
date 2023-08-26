@@ -62,9 +62,24 @@
                 </div>
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6 v-if="savings">Savings</h6>
-                        <h6 v-if="loans">Loans</h6>
-                        <h6 v-if="transactions">Transactions</h6>
+                        <h4 v-if="savings">Savings</h4>
+                        <h4 v-if="loans">Loans</h4>
+                        <h4 v-if="transactions">Transactions</h4>
+                        <div v-if="savings" class="d-flex justify-content-between">
+                            <h5 class="text-primary text-uppercase">Total Saved : N{{ savings_data }}</h5>
+                            <h5></h5>
+                            <h5></h5>
+                        </div>
+                        <div v-if="loans" class="d-flex justify-content-between">
+                            <h5 class="text-primary text-uppercase">Loans Collected: N{{ loans_collected }}</h5>
+                            <h5></h5>
+                            <h5 class="text-primary text-uppercase">Loan Paid: N{{ loans_paid }}</h5>
+                        </div>
+                        <div v-if="transactions" class="d-flex justify-content-between">
+                            <h5 class="text-primary text-uppercase">Wallet: N{{ wallet_data }}</h5>
+                            <h5 class="text-primary text-uppercase">Saving: N{{ savings_data }}</h5>
+                            <h5 class="text-primary text-uppercase">Loan Collected: N{{ loans_collected }}</h5>
+                        </div>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -102,6 +117,10 @@ import { computed, ref } from 'vue';
         'savings':Object,
         'loans':Object,
         'customer': Object,
+        'loans_collected': Number,
+        'loans_paid': Number,
+        'savings_data': Number,
+        'wallet_data': Number,
     })
 
     const UserTransactions = (id) => {

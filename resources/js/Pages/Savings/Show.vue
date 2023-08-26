@@ -18,67 +18,67 @@
                     <ul class="list-group">
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Email</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Email</h6>
                                 <span class="text-sm">{{ user.email }}</span>
                             </div>
                         </li>
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Phone Number</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Phone Number</h6>
                                 <span class="text-sm">{{user.phone}}</span>
                             </div>
                         </li>
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Gender</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Gender</h6>
                                 <span class="text-sm">{{ user.gender }}</span>
                             </div>
                         </li>
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">BVN</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">BVN</h6>
                                 <span class="text-sm">{{ user.bvn }}</span>
                             </div>
                         </li>
 
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">City</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">City</h6>
                                 <span class="text-sm">{{ user.city }}</span>
                             </div>
                         </li>
 
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Company Location</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Company Location</h6>
                                 <span class="text-sm">{{ user.company_location }}</span>
                             </div>
                         </li>
 
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Company Name</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Company Name</h6>
                                 <span class="text-sm">{{ user.company_name }}</span>
                             </div>
                         </li>
 
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Employee Status</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Employee Status</h6>
                                 <span class="text-sm">{{ user.employment_status }}</span>
                             </div>
                         </li>
 
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Marital Status</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Marital Status</h6>
                                 <span class="text-sm">{{ user.marital_status }}</span>
                             </div>
                         </li>
 
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-xs">Residential Address</h6>
+                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Residential Address</h6>
                                 <span class="text-sm">{{ user.residential_address }}</span>
                             </div>
                         </li>
@@ -99,18 +99,18 @@
                     </div>
                 </div>
                 <div class="card-body pt-4 p-3">
-                    <!-- {{-- <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Yesterday</h6> --}} -->
+                    <!-- {{-- <h6 class="text-uppercase text-body text-sm font-weight-bolder my-3">Yesterday</h6> --}} -->
                     <ul class="list-group">
                         <!-- {{-- name --}} -->
                         <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Name</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Name</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ user.firstname }} {{ user.lastname }}
                             </div>
                         </li>
@@ -120,11 +120,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">% Intrest</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">% Intrest</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.interest }} %
                             </div>
                         </li>
@@ -134,11 +134,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Status</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Status</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.status }}
                             </div>
                         </li>
@@ -148,11 +148,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Duration</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Duration</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.duration }} months
                             </div>
                         </li>
@@ -162,11 +162,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Expiration Date</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Expiration Date</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.expiration }}
                             </div>
                         </li>
@@ -176,11 +176,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Saving Date</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Saving Date</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.date }}
                             </div>
                         </li>
@@ -190,11 +190,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Saving Time</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Saving Time</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.time }}
                             </div>
                         </li>
@@ -204,11 +204,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Entry Amount </h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Entry Amount </h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.entry }}
                             </div>
                         </li>
@@ -218,11 +218,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Interest Accrued</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Interest Accrued</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                {{ saving.accrued }}
                             </div>
                         </li>
@@ -232,11 +232,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Saving Description</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}} -->
+                                    <h6 class="mb-1 text-dark text-sm">Saving Description</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}} -->
                                 <!-- {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.description }}
                             </div>
                         </li>
@@ -246,11 +246,11 @@
                             <div class="d-flex align-items-center">
 
                                 <!-- {{-- <div class="d-flex flex-column"> --}} -->
-                                    <h6 class="mb-1 text-dark text-xs">Duration Left</h6>
-                                    <!-- {{-- <span class="text-xs">26 March 2020, at 13:45 PM</span> --}}
+                                    <h6 class="mb-1 text-dark text-sm">Duration Left</h6>
+                                    <!-- {{-- <span class="text-sm">26 March 2020, at 13:45 PM</span> --}}
                                 {{-- </div> --}} -->
                             </div>
-                            <div class="d-flex align-items-center text-xs font-weight-bold">
+                            <div class="d-flex align-items-center text-sm font-weight-bold">
                                 {{ saving.duration_left }}
                             </div>
                         </li>

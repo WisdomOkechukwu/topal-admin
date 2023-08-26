@@ -12,6 +12,7 @@ use Inertia\Inertia;
 class SavingsController extends Controller
 {
     public function savings(Customer $customer, Request $request){
+        $savings_data = Saving::where('customer_id', $customer->customer_id)->sum('amount_to_save');
         $savings = Saving::with('user')->where('customer_id', $customer->customer_id);
         if($request->status){
             $savings = $savings->where('type',$request->status);
@@ -42,6 +43,7 @@ class SavingsController extends Controller
         return Inertia::render('Customer/Catalog',[
             'customer' => $customer,
             'savings' => $savingsData,
+            'savings_data' => number_format($savings_data),
         ]);
     }
 }

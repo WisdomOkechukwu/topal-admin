@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon.ico') }}">
     <link rel="icon"  href="{{ asset('favicon.ico') }}">
     <title>
-        Argon Dashboard 2 by Creative Tim
+        Tapol Admin
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

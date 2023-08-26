@@ -13,6 +13,8 @@ class LoansController extends Controller
 {
     public function loans(Customer $customer, Request $request){
 
+        $loans_collected = Loan::where('customer_id', $customer->customer_id)->sum('amount');
+        $loans_paid = Loan::where('customer_id', $customer->customer_id)->sum('paid_amount');
         $loans = Loan::with('user')->where('customer_id', $customer->customer_id);
         if($request->status){
             $loans = $loans->where('type',$request->status);
@@ -42,7 +44,9 @@ class LoansController extends Controller
 
         return Inertia::render('Customer/Catalog',[
             'customer' => $customer,
-            'loans' => $loanData
+            'loans' => $loanData,
+            'loans_collected' => number_format($loans_collected),
+            'loans_paid' => number_format($loans_paid)
         ]);
     }
 }
