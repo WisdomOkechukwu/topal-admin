@@ -1,6 +1,6 @@
 <template>
     <div class="row mt-2">
-        <Transactions :options="transaction_options" :series="transaction_series"/>
+        <Transactions :options="transaction_options" :series="transaction_series" :transaction_dropdown="transaction_dropdown"/>
 
     </div>
 
@@ -22,6 +22,7 @@
         'transaction_series': Array,
         'loan_options': Object,
         'loan_series': Array,
+        'transaction_dropdown':Object,
     })
 
     var type = ref('area');
