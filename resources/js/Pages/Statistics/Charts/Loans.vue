@@ -34,7 +34,9 @@
                                 <option value="">Select Status</option>
                                 <option value="0">Pending</option>
                                 <option value="1">Active</option>
-                                <option value="2">Cancelled</option>
+                                <option value="2">Declined</option>
+                                <option value="3">Completed</option>
+                                <option value="4">Expired</option>
                             </select>
                         </div>
                         <div class="col-4">

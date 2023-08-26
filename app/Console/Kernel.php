@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('app:test-cron')->everyMinute();
+        $schedule->command('app:check-loans')->everyMinute();
+        $schedule->command('app:check-savings')->everyMinute();
     }
 
     /**

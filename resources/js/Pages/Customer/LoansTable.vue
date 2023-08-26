@@ -38,7 +38,7 @@
                     <h6 v-if="loan.status == 1" class="mb-0 text-sm text-success">Active</h6>
                     <h6 v-if="loan.status == 2" class="mb-0 text-sm text-danger">Declined</h6>
                     <h6 v-if="loan.status == 3" class="mb-0 text-sm text-success">Completed</h6>
-                    <h6 v-if="loan.status == 4" class="mb-0 text-sm text-danger">Cancelled</h6>
+                    <h6 v-if="loan.status == 4" class="mb-0 text-sm text-danger">Expired</h6>
                 </td>
                 <td>
                     <h6 class="mb-0 text-sm">{{ loan.duration }}</h6>
