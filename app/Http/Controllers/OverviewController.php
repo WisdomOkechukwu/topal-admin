@@ -12,6 +12,14 @@ use Inertia\Inertia;
 class OverviewController extends Controller
 {
     public function index(){
+        $transaction = Transaction::select('type')->distinct('type')->get();
+        foreach($transaction as $t){
+            $t->name = ucwords($t->type);
+            if(str_contains($t->type,'_')){
+                $t->name = (ucwords(str_replace('_', ' ', $t->type)));
+            }
+        }
+
         return Inertia::render('Overview/Index',[
             'transaction_options' => $this->renderTransactionsChart()->options,
             'transaction_series' => $this->renderTransactionsChart()->series,
@@ -20,6 +28,7 @@ class OverviewController extends Controller
             'saving_options' => $this->renderSavingsChart()->options,
             'saving_series' => $this->renderSavingsChart()->series,
             'transactions' => $this->transactions(),
+            'transaction_dropdown' => $transaction
         ]);
     }
 

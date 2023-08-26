@@ -1,7 +1,7 @@
 <template>
     <div class="row mt-4">
     <!-- <Chart :options="options" :series="series" /> -->
-    <Transactions :options="transaction_options" :series="transaction_series"/>
+    <Transactions :options="transaction_options" :series="transaction_series" :transaction_dropdown="transaction_dropdown"/>
     <Loans :options="loan_options" :series="loan_series"/>
     <Savings :options="saving_options" :series="saving_series"/>
     </div>
@@ -34,7 +34,8 @@
         'loan_series': Array,
         'saving_options': Object,
         'saving_series': Array,
-        'transactions': Object
+        'transactions': Object,
+        'transaction_dropdown': Object
     })
 </script>
 
