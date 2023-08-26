@@ -36,21 +36,21 @@ class CheckLoans extends Command
             if(now() > $loanEndDate){
                 $loan->status = 3;
                 if($loan->paid_amount < $loan->total_repayment){
-                    $loan->status = 4;
-
                     $remaining_amount = $loan->total_repayment - $loan->paid_amount;
                     $userWallet = Wallet::where('customer_id', $loan->customer_id)->first();
                     $userBalance = $userWallet->balance;
 
+                    $balance = $userBalance - $remaining_amount;
 
-                    $pending_amount = $userBalance - $remaining_amount;
-
-                    if($pending_amount < 0){
+                    if($balance < 0){
                         $userWallet->balance = 0;
                         $loan->paid_amount += $userBalance;
-                    } else {
-                        $userWallet->balance -= $pending_amount;
-                        $loan->paid_amount += $pending_amount;
+                        $loan->status = 4;
+                    }
+
+                    if($balance > 0) {
+                        $userWallet->balance -= $remaining_amount;
+                        $loan->paid_amount += $remaining_amount;
                     }
 
                     $userWallet->save();
