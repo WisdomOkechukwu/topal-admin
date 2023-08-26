@@ -17,7 +17,7 @@ use function PHPSTORM_META\type;
 class TransactionController extends Controller
 {
     public function transactions(Customer $customer, Request $request){
-        $loans_collected = Loan::where('customer_id', $customer->customer_id)->sum('amount');
+        $loans_collected = Loan::where('customer_id', $customer->customer_id)->whereNotIn('status',[0,2,4])->sum('amount');
         $wallet = Wallet::where('customer_id', $customer->customer_id)->first()->balance;
         $savings = Saving::where('customer_id', $customer->customer_id)->sum('amount_to_save');
 
