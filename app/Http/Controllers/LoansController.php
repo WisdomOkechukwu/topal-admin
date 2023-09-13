@@ -33,6 +33,7 @@ class LoansController extends Controller
             $tempCollection = (object) [
                 'id' => $loan->id,
                 'name' => $loan->user?->firstname . ' ' . $loan->user?->lastname,
+                'image' => ($loan->user?->profile_picture != null) ? "https://api.tapolgroup.com/storage/documents/profile_pictures/".$loan->user?->profile_picture : "https://api.tapolgroup.com/logo.svg",
                 'loan_type' => $loan->loan_purpose,
                 'status' => $loan->status,
                 'duration' => $loan->duration." Months",

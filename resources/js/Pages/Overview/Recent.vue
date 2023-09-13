@@ -19,7 +19,7 @@
                 <td>
                     <div class="d-flex px-2">
                         <div>
-                            <img src="../../../assets/img/team-2.jpg"
+                            <img :src="transaction.image"
                                 class="avatar avatar-sm rounded-circle me-2 ">
                         </div>
                         <div class="my-auto">

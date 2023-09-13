@@ -9,12 +9,13 @@ use Inertia\Inertia;
 class CustomersController extends Controller
 {
     public function all_users(){
-        $customers = Customer::select('id','firstname','lastname','status')->get();
+        $customers = Customer::select('id','firstname','lastname','status','profile_picture')->get();
 
         $allCustomers = collect();
         foreach ($customers as $customer) {
             $tempCollection = (object) [
                 'id' => $customer->id,
+                'image' => ($customer->profile_picture != null) ? "https://api.tapolgroup.com/storage/documents/profile_pictures/".$customer->profile_picture : "https://api.tapolgroup.com/logo.svg",
                 'name' => $customer->firstname." ".$customer->lastname,
                 'status' => $customer->status
             ];

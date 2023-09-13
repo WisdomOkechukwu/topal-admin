@@ -1,8 +1,4 @@
 {
-  "resources/assets/img/team-2.jpg": {
-    "file": "assets/team-2-d149865c.jpg",
-    "src": "resources/assets/img/team-2.jpg"
-  },
   "resources/css/app.css": {
     "file": "assets/app-4ed993c7.js",
     "isEntry": true,
@@ -13,13 +9,10 @@
     "src": "resources/js/app.css"
   },
   "resources/js/app.js": {
-    "assets": [
-      "assets/team-2-d149865c.jpg"
-    ],
     "css": [
       "assets/app-45750b6f.css"
     ],
-    "file": "assets/app-5b8d972a.js",
+    "file": "assets/app-45f67831.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }

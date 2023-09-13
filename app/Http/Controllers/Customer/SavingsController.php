@@ -31,6 +31,7 @@ class SavingsController extends Controller
             $tempCollection = (object) [
                 'id' => $saving->id,
                 'name' => $saving->user?->firstname . ' ' . $saving->user?->lastname,
+                'image' => ($saving->user?->profile_picture != null) ? "https://api.tapolgroup.com/storage/documents/profile_pictures/".$saving->user?->profile_picture : "https://api.tapolgroup.com/logo.svg",
                 'interest' => round(($saving->interest_due / $saving->amount_to_save) * 100, 2),
                 'status' => $saving->status,
                 'duration' => Carbon::parse($saving->start_date)->diffInMonths(Carbon::parse($saving->maturity_date)),

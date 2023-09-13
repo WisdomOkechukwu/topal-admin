@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ class TransactionController extends Controller
         foreach ($transactions as $transaction) {
             $tempCollection = (Object)[
                 'id' => $transaction->id,
+                'image' => ($transaction->user?->profile_picture != null) ? "https://api.tapolgroup.com/storage/documents/profile_pictures/".$transaction->user?->profile_picture : "https://api.tapolgroup.com/logo.svg",
                 'name' => $transaction->user?->firstname . ' ' . $transaction->user?->lastname,
                 'type' => ucwords($transaction->type),
                 'date' => Carbon::parse($transaction->created_at)->format('d F Y'),

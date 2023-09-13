@@ -221,7 +221,7 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-sm-auto col-4">
                         <div class="avatar avatar-xl position-relative">
-                            <img src="../../../assets/img/team-2.jpg" class="w-100 border-radius-lg shadow-sm">
+                            <img :src="image" class="w-100 border-radius-lg shadow-sm">
                         </div>
                     </div>
                     <div class="col-sm-auto col-8 my-auto">
@@ -470,6 +470,8 @@ import { computed, ref } from "vue";
         marital_status: props.customer.marital_status,
         address: props.customer.residential_address
     })
+
+    const image = (props.customer.profile_picture != null) ? "https://api.tapolgroup.com/storage/documents/profile_pictures/"+props.customer.profile_picture : "https://api.tapolgroup.com/logo.svg";
 
     const page = usePage();
     const showToastNotification = computed(() =>{

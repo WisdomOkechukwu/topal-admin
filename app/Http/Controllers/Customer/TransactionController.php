@@ -40,6 +40,7 @@ class TransactionController extends Controller
             $tempCollection = (Object)[
                 'id' => $transaction->id,
                 'name' => $transaction->user?->firstname . ' ' . $transaction->user?->lastname,
+                'image' => ($transaction->user?->profile_picture != null) ? "https://api.tapolgroup.com/storage/documents/profile_pictures/".$transaction->user?->profile_picture : "https://api.tapolgroup.com/logo.svg",
                 'type' => ucwords($transaction->type),
                 'date' => Carbon::parse($transaction->created_at)->format('d F Y'),
             ];
