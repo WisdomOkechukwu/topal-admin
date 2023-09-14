@@ -107,6 +107,7 @@
                             <div class="col-md-6 d-flex justify-content-end align-items-center">
                                 <button v-if="loan.status == 0" @click.prevent="showApproveDialog(loan.id)" class="btn bg-gradient-primary m-2">Approve Loan</button>
                                 <button v-if="loan.status == 0" @click.prevent="showDeclineDialog(loan.id)" class="btn bg-gradient-danger m-2">Cancel Loan</button>
+                                <button v-if="loan.status == 1" @click.prevent="showDeclineDialog(loan.id)" class="btn bg-gradient-danger m-2">Cancel Loan</button>
                                 <button @click.prevent="goBack" class="btn bg-gradient-warning m-2">Back</button>
                             </div>
                         </div>

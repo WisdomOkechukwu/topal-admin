@@ -108,7 +108,7 @@ class LoansController extends Controller
 
         try{
             $client = new Client();
-            $loginUrl = 'http://localhost:3000/api/loan/mailer/send';
+            $loginUrl = 'https://api.tapolgroup.com/api/loan/mailer/send';
 
             $approve = $client->request('POST', $loginUrl, [
                 'headers' => ['Content-Type' => 'application/json'],
@@ -135,8 +135,8 @@ class LoansController extends Controller
             return back()->with('error','Loan not found');
         }
 
-        if($loan->status != 0){
-            return back()->with('error','Loan is not pending for approval');
+        if(!in_array($loan->status, [0,1])){
+            return back()->with('error','Loan is not pending or active');
         }
 
         if($request->pin != Auth::user()->pin){
@@ -150,7 +150,7 @@ class LoansController extends Controller
 
         try{
             $client = new Client();
-            $loginUrl = 'http://localhost:3000/api/loan/mailer/send';
+            $loginUrl = 'https://api.tapolgroup.com/api/loan/mailer/send';
 
             $decline = $client->request('POST', $loginUrl, [
                 'headers' => ['Content-Type' => 'application/json'],

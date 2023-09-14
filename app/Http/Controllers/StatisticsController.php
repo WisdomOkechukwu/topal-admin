@@ -9,13 +9,47 @@ use Inertia\Inertia;
 class StatisticsController extends Controller
 {
     public function index(){
-        $transaction = Transaction::select('type')->distinct('type')->get();
-        foreach($transaction as $t){
-            $t->name = ucwords($t->type);
-            if(str_contains($t->type,'_')){
-                $t->name = (ucwords(str_replace('_', ' ', $t->type)));
-            }
-        }
+        $transaction = [
+            [
+                'name' => 'Saving',
+                'type' => 'savings',
+            ],
+            [
+                'name' => 'Loan',
+                'type' => 'loan',
+            ],
+            [
+                'name' => 'Wallet Top Up',
+                'type' => 'wallet_topup',
+            ],
+            [
+                'name' => 'Wallet Withdrawal',
+                'type' => 'wallet_withdrawal',
+            ],
+            [
+                'name' => 'Send Airtime',
+                'type' => 'debit',
+            ],
+            [
+                'name' => 'Data',
+                'type' => 'data',
+            ],
+            [
+                'name' => 'Cable',
+                'type' => 'cable_tv',
+            ],
+            [
+                'name' => 'Electricity',
+                'type' => 'electricity',
+            ],
+            [
+                'name' => 'Betting',
+                'type' => 'bet',
+            ],
+        ];
+
+        $transaction = collect($transaction);
+        
         $chartData = new OverviewController();
         $url = (env('APP_ENV') == 'local' ? 'http://localhost:8000' : 'https://admin.tapolgroup.com');
         return Inertia::render('Statistics/Index',[
