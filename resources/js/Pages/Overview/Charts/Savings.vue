@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-4">
                             <select v-model="status" class="form-select" aria-label="Default select example">
-                                <option>Select Status</option>
+                                <option value="">Select Status</option>
                                 <option value="0">Active</option>
                                 <option value="1">Completed</option>
                             </select>

@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-4">
                             <select v-model="status" class="form-select" aria-label="Default select example">
-                                <option>Select Type</option>
+                                <option value="">Select Type</option>
                                 <option v-for="td in transaction_dropdown" :key="td" :value="td.type">{{ td.name }}</option>
                             </select>
                         </div>

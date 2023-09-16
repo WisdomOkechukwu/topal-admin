@@ -49,7 +49,7 @@ class StatisticsController extends Controller
         ];
 
         $transaction = collect($transaction);
-        
+
         $chartData = new OverviewController();
         $url = (env('APP_ENV') == 'local' ? 'http://localhost:8000' : 'https://admin.tapolgroup.com');
         return Inertia::render('Statistics/Index',[
@@ -57,6 +57,8 @@ class StatisticsController extends Controller
             'transaction_series' => $chartData->renderTransactionsChart()->series,
             'loan_options' => $chartData->renderLoansChart()->options,
             'loan_series' => $chartData->renderLoansChart()->series,
+            'saving_options' => $chartData->renderSavingsChart()->options,
+            'saving_series' => $chartData->renderSavingsChart()->series,
             'transaction_dropdown' => $transaction,
             'url' => $url
         ]);

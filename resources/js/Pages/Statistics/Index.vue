@@ -7,6 +7,10 @@
     <div class="row mt-2">
         <Loans :options="loan_options" :series="loan_series" :url="url"/>
     </div>
+
+    <div class="row mt-2">
+        <Savings :options="saving_options" :series="saving_series" :url="url"/>
+    </div>
 </template>
 
 <script setup>
@@ -16,12 +20,15 @@
     } from 'vue';
     import Loans from './Charts/Loans.vue';
     import Transactions from './Charts/Transactions.vue';
+    import Savings from './Charts/Savings.vue';
 
     const props = defineProps({
         'transaction_options': Object,
         'transaction_series': Array,
         'loan_options': Object,
         'loan_series': Array,
+        'saving_options': Object,
+        'saving_series': Array,
         'transaction_dropdown':Object,
         'url': String,
     })
