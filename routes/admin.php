@@ -37,6 +37,8 @@ Route::prefix("customer")->name("customer.")->group(function () {
     Route::GET('/show/{customer}', [CustomerProfileController::class,'show']);
     Route::PUT('/update/{customer}', [CustomerProfileController::class,'update']);
     Route::PUT('/update/password/{customer}', [CustomerProfileController::class,'update_password']);
+    Route::POST('/update/toAdmin/{customer}', [CustomerProfileController::class,'update_to_admin']);
+    Route::POST('/update/downgradeAdmin/{customer}', [CustomerProfileController::class,'downgradeAdmin']);
     Route::POST('/delete', [CustomerProfileController::class,'delete']);
 
     // Loans, savings and transactions

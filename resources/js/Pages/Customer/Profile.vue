@@ -229,7 +229,10 @@
                             <h5 class="mb-1 font-weight-bolder">
                                 {{ customer.firstname }} {{ customer.lastname }}
                             </h5>
-                            <p class="mb-0 font-weight-bold text-sm">
+                            <p v-if="is_admin" class="mb-0 font-weight-bold text-sm">
+                                Admin
+                            </p>
+                            <p v-else class="mb-0 font-weight-bold text-sm">
                                 Customer
                             </p>
                         </div>
@@ -414,6 +417,27 @@
                 </form>
             </div>
 
+            <div class="card mt-4" id="upgrade" v-if="is_admin == 0">
+                <div class="card-header">
+                    <h5>Upgrade Account</h5>
+                    <p class="text-sm mb-0">Upgrade account to an admin account</p>
+                </div>
+                <div class="card-body d-sm-flex pt-0">
+                    <button @click.prevent="upgradeUserToAdmin" class="btn bg-gradient-primary mb-0 ms-auto" type="button" name="button">Upgrade
+                        Account</button>
+                </div>
+            </div>
+
+            <div class="card mt-4" id="revoke" v-if="is_admin == 1">
+                <div class="card-header">
+                    <h5>Downgrade Account</h5>
+                    <p class="text-sm mb-0">Revoke Admin Privileges</p>
+                </div>
+                <div class="card-body d-sm-flex pt-0">
+                    <button @click.prevent="downgradeAdmin" class="btn bg-gradient-danger mb-0 ms-auto" type="button" name="button">Downgrade
+                        Account</button>
+                </div>
+            </div>
 
             <div class="card mt-4" id="delete">
                 <div class="card-header">
@@ -443,6 +467,8 @@
                         Account</button>
                 </div>
             </div>
+
+
         </div>
     </div>
 </template>
@@ -454,8 +480,11 @@ import { computed, ref } from "vue";
 
     const props = defineProps({
         'customer':Object,
+        'is_admin': Number,
         'errors':Object,
     })
+
+    // console.log(props.is_admin);
     const form = useForm({
         first : props.customer.firstname,
         last : props.customer.lastname,
@@ -497,6 +526,14 @@ import { computed, ref } from "vue";
             confirmDeleteText.value = 'Please toggle the button to proceed';
         }
         // router.post(`/customer/delete`,delete_form);
+    }
+
+    const upgradeUserToAdmin = () => {
+        router.post(`/customer/update/toAdmin/${props.customer.id}`,{ preserveScroll: true });
+    }
+
+    const downgradeAdmin = () => {
+        router.post(`/customer/update/downgradeAdmin/${props.customer.id}`,{ preserveScroll: true });
     }
 
     const fireSuccessNotification = (type,message) =>{

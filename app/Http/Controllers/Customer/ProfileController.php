@@ -9,15 +9,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
     public function show($customer){
         $customer = Customer::find($customer);
         if(!$customer) return redirect()->route('customers.profile')->with('error','Error Finding User');
+        $admin = User::where('email',$customer->email)->first();
 
         return Inertia::render('Customer/Profile',[
             'customer' => $customer,
+            'is_admin' => ($admin) ? 1 : 0,
         ]);
     }
 
@@ -54,6 +57,25 @@ class ProfileController extends Controller
         $customer->save();
 
         return back()->with('success','User Password Updated Successfully');
+    }
+
+    public function update_to_admin(Customer $customer, Request $request){
+
+        $user = New User();
+        $user->authid = Str::random(7);
+        $user->firstname = $customer->firstname;
+        $user->lastname = $customer->lastname;
+        $user->email = $customer->email;
+        $user->pin = 0000; //default pin
+        $user->password = Hash::make('12345678');
+        $user->save();
+
+        return back()->with('success','Admin Link Created');
+    }
+
+    public function downgradeAdmin(Customer $customer, Request $request){
+        User::where('email', $customer->email)->delete();
+        return back()->with('success','Admin Privilege Revoked');
     }
 
     public function delete(Request $request){
